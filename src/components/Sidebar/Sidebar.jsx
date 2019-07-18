@@ -18,6 +18,7 @@
 */
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { connect } from 'react-redux';
 import { Nav } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
@@ -53,8 +54,8 @@ class Sidebar extends React.Component {
     return (
       <div
         className="sidebar"
-        data-color={this.props.bgColor}
-        data-active-color={this.props.activeColor}
+        data-color={this.props.bgState.bgColor}
+        data-active-color={this.props.activeState.activeColor}
       >
         <div className="logo">
           <a
@@ -100,5 +101,7 @@ class Sidebar extends React.Component {
     );
   }
 }
-
-export default Sidebar;
+const mapStateToProps = state => ({
+  ...state
+});
+export default connect(mapStateToProps) (Sidebar);

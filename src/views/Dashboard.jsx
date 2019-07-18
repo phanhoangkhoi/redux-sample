@@ -1,21 +1,4 @@
-/*!
 
-=========================================================
-* Paper Dashboard React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 // react plugin used to create charts
 import { Line, Pie } from "react-chartjs-2";
@@ -31,10 +14,10 @@ import {
 } from "reactstrap";
 // core components
 import {
-  dashboard24HoursPerformanceChart,
   dashboardEmailStatisticsChart,
   dashboardNASDAQChart
 } from "variables/charts.jsx";
+import UserTable from "components/UserTable";
 
 class Dashboard extends React.Component {
   render() {
@@ -155,12 +138,7 @@ class Dashboard extends React.Component {
                   <p className="card-category">24 Hours performance</p>
                 </CardHeader>
                 <CardBody>
-                  <Line
-                    data={dashboard24HoursPerformanceChart.data}
-                    options={dashboard24HoursPerformanceChart.options}
-                    width={400}
-                    height={100}
-                  />
+                  <UserTable/>
                 </CardBody>
                 <CardFooter>
                   <hr />

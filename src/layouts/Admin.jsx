@@ -33,10 +33,10 @@ var ps;
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      backgroundColor: "black",
-      activeColor: "info"
-    };
+    // this.state = {
+    //   backgroundColor: "black",
+    //   activeColor: "info"
+    // };
     this.mainPanel = React.createRef();
   }
   componentDidMount() {
@@ -57,20 +57,20 @@ class Dashboard extends React.Component {
       document.scrollingElement.scrollTop = 0;
     }
   }
-  handleActiveClick = color => {
-    this.setState({ activeColor: color });
-  };
-  handleBgClick = color => {
-    this.setState({ backgroundColor: color });
-  };
+  // handleActiveClick = color => {
+  //   this.setState({ activeColor: color });
+  // };
+  // handleBgClick = color => {
+  //   this.setState({ backgroundColor: color });
+  // };
   render() {
     return (
       <div className="wrapper">
         <Sidebar
           {...this.props}
           routes={routes}
-          bgColor={this.state.backgroundColor}
-          activeColor={this.state.activeColor}
+          // bgColor={this.state.backgroundColor}
+          // activeColor={this.state.activeColor}
         />
         <div className="main-panel" ref={this.mainPanel}>
           <DemoNavbar {...this.props} />
@@ -88,10 +88,10 @@ class Dashboard extends React.Component {
           <Footer fluid />
         </div>
         <FixedPlugin
-          bgColor={this.state.backgroundColor}
-          activeColor={this.state.activeColor}
-          handleActiveClick={this.handleActiveClick}
-          handleBgClick={this.handleBgClick}
+          // bgColor={this.state.backgroundColor}
+          // activeColor={this.state.activeColor}
+          // handleActiveClick={this.handleActiveClick}
+          // handleBgClick={this.handleBgClick}
         />
       </div>
     );
